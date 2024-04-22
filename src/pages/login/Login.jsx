@@ -14,11 +14,9 @@ const Login = () => {
     <div className="login">
       <div className="card">
         <div className="left">
-          <h1>Hello World.</h1>
+          <h1>Unilink</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero cum,
-            alias totam numquam ipsa exercitationem dignissimos, error nam,
-            consequatur.
+          a social media  web application aiming to connect students with UIT alumni to seek guidance, mentorship, and networking opportunities from their experience
           </p>
           <span>Don't you have an account?</span>
           <Link to="/register">

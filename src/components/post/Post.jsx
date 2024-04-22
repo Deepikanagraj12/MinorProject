@@ -7,6 +7,7 @@ import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import { Link } from "react-router-dom";
 import Comments from "../comments/Comments";
 import { useState } from "react";
+import ChiragCer from "../../assets/ChiragCer.jpg";
 
 const Post = ({ post }) => {
   const [commentOpen, setCommentOpen] = useState(false);

@@ -1,6 +1,6 @@
 .login {
   height: 100vh;
-  background-color: rgb(193, 190, 255);
+  background-image: linear-gradient(120deg, #233f6d 0%, #c2e9fb 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,8 +15,7 @@
 
     .left {
       flex: 1;
-      background: linear-gradient(rgba(39, 11, 96, 0.5), rgba(39, 11, 96, 0.5)),
-        url("https://images.pexels.com/photos/3228727/pexels-photo-3228727.jpeg?auto=compress&cs=tinysrgb&w=1600")
+      background: linear-gradient(rgba(49, 91, 146, 0.5), rgba(116, 185, 225, 0.5)),
           center;
       background-size: cover;
       padding: 50px;
@@ -41,8 +40,8 @@
         width: 50%;
         padding: 10px;
         border: none;
-        background-color: white;
-        color: rebeccapurple;
+        background-color:rgb(241, 243, 244);
+        color:rgb(	85, 194, 218);
         font-weight: bold;
         cursor: pointer;
       }
@@ -75,7 +74,7 @@
           width: 50%;
           padding: 10px;
           border: none;
-          background-color: #938eef;
+          background-color:rgb(	85, 194, 218);
           color: white;
           font-weight: bold;
           cursor: pointer;

@@ -29,7 +29,7 @@ const LeftBar = () => {
           <span>Main Menu</span>
           <div className="user">
           <img src={currentUser.profilePic} alt="Profile" />
-          <span>{currentUser.name}</span>
+          <span>Akshat Sharma</span>
         </div>
           <div className="item">
             <img src={Home} alt="Home" />

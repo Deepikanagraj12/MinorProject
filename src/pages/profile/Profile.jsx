@@ -50,7 +50,7 @@ const Profile = () => {
             </a> */}
           </div>
           <div className="center">
-            <span>Jane Doe</span>
+            <span>Chirag Hira</span>
             <div className="info">
               <div className="item">
                 <PlaceIcon />
@@ -58,7 +58,7 @@ const Profile = () => {
               </div>
               <div className="item">
                 <LanguageIcon />
-                <span>janeDoe@gmail.com</span>
+                <span>ChiragHira@gmail.com</span>
               </div>
             </div>
             <button>follow</button>
