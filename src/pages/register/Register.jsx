@@ -197,7 +197,7 @@ const Register = () => {
   return (
     <div className="register">
       <div className="card">
-        <div className="left">
+        <div className="left1">
           <h1>Unilink</h1>
           <p>A social web Application to connect Students and Alumni!</p>
           <span>Do you have an account?</span>
@@ -205,7 +205,7 @@ const Register = () => {
             <button>Login</button>
           </Link>
         </div>
-        <div className="right">
+        <div className="right1">
           <h1>Register</h1>
           <form onSubmit={handleSubmit}>
             {renderFormFields()}
@@ -216,12 +216,12 @@ const Register = () => {
                 </button>
               )}
               {currentPage < 2 && (
-                <button type="button" onClick={handleNext}>
+                <button className="next" type="button" onClick={handleNext}>
                   Next
                 </button>
               )}
               {currentPage === 2 && (
-                <button type="submit">Register</button>
+                <button class name = "next" type="submit">Register</button>
               )}
             </div>
           </form>
