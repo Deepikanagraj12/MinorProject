@@ -4,7 +4,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  
 }
 
 .card {
@@ -14,13 +13,11 @@
   background-color: white;
   border-radius: 10px;
   max-height: 600px;
- 
 }
 
 .left1 {
   flex: 1;
-  background: linear-gradient(rgba(49, 91, 146, 0.5), rgba(116, 185, 225, 0.5)),
-    center;
+  background: linear-gradient(rgba(49, 91, 146, 0.5), rgba(116, 185, 225, 0.5)), center;
   background-size: cover;
   padding-left: 20px;
   padding-top: 50px;
@@ -62,8 +59,6 @@
   color: #555;
   overflow-x: scroll;
   overflow-y: auto;
-
- 
 }
 
 .right1 h1 {}
@@ -81,9 +76,30 @@
   padding: 20px 10px;
 }
 
+.right1 .checkboxes {
+  display: flex;
+  justify-content: space-between;
+  font-family:'Times New Roman', Times, serif;
+ 
+  font-size: 0.9rem;
+  padding-top: 0.3rem;
+  
+}
+.right1 .checkboxes .usertype{
+  flex-direction: column;
+  gap: 10px;
+  font-weight: bold;
+}
+
+.right1 .buttons {
+  display: flex;
+  justify-content: space-between;
+  gap:10px;
+}
+
 .right1 button {
-  padding: 1.3em 3em;
-  font-size: 12px;
+  padding: 0.8em 2em; /* Adjusted padding */
+  font-size: 11px; /* Adjusted font size */
   text-transform: uppercase;
   letter-spacing: 2.5px;
   font-weight: 500;
@@ -98,8 +114,8 @@
 }
 
 .right1 button:hover {
-  background-color: #23c483;
-  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  background-color:rgb(85, 194, 218);
+  box-shadow: 0px 15px 20px rgba(25, 25, 26, 0.4);
   color: #fff;
   transform: translateY(-7px);
 }

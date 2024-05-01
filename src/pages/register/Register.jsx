@@ -42,6 +42,12 @@ const Register = () => {
     setFormData({ ...formData, [name]: value });
   };
 
+  // Function to handle userType selection
+  const handleUserTypeChange = (e) => {
+    const { name, checked } = e.target;
+    setFormData({ ...formData, [name]: checked ? e.target.value : "" });
+  };
+
   // Render different sets of input fields based on the current page
   const renderFormFields = () => {
     switch (currentPage) {
@@ -80,16 +86,30 @@ const Register = () => {
               onChange={handleChange}
               required
             />
-            <select
-              name="userType"
-              value={formData.userType}
-              onChange={handleChange}
-              required
-            >
-              <option value="">Select User Type</option>
-              <option value="student">Student</option>
-              <option value="alumni">Alumni</option>
-            </select>
+           
+            <div className="checkboxes">
+            <p className = "usertype">Select User Type</p>
+              <label>
+                <input
+                  type="checkbox"
+                  name="userType"
+                  value="student"
+                  checked={formData.userType === "student"}
+                  onChange={handleUserTypeChange}
+                />
+                 Student
+              </label>
+              <label>
+                <input
+                  type="checkbox"
+                  name="userType"
+                  value="alumni"
+                  checked={formData.userType === "alumni"}
+                  onChange={handleUserTypeChange}
+                />
+                 Alumni
+              </label>
+            </div>
           </div>
         );
       case 2:
@@ -112,13 +132,13 @@ const Register = () => {
                   value={formData.year}
                   onChange={handleChange}
                 />
-                <input
+                {/* <input
                   type="date"
                   name="dob"
                   placeholder="Date of Birth"
                   value={formData.dob}
                   onChange={handleChange}
-                />
+                /> */}
                 <input
                   type="text"
                   name="address"
@@ -126,13 +146,13 @@ const Register = () => {
                   value={formData.address}
                   onChange={handleChange}
                 />
-                <input
+                {/* <input
                   type="text"
                   name="collegeName"
                   placeholder="College Name"
                   value={formData.collegeName}
                   onChange={handleChange}
-                />
+                /> */}
                 <input
                   type="text"
                   name="skills"
@@ -140,12 +160,12 @@ const Register = () => {
                   value={formData.skills}
                   onChange={handleChange}
                 />
-                <input
+                {/* <input
                   type="file"
                   name="profileAttachment"
                   placeholder="Profile Attachment"
                   onChange={handleChange}
-                />
+                /> */}
               </>
             )}
             {/* Fields for alumni */}
@@ -165,6 +185,13 @@ const Register = () => {
                   value={formData.graduationYear}
                   onChange={handleChange}
                 />
+                 <input
+                  type="text"
+                  name="branch"
+                  placeholder="Branch"
+                  value={formData.branch}
+                  onChange={handleChange}
+                />
                 <input
                   type="text"
                   name="companyName"
@@ -179,12 +206,12 @@ const Register = () => {
                   value={formData.designation}
                   onChange={handleChange}
                 />
-                <input
+                {/* <input
                   type="file"
                   name="profileAttachment"
                   placeholder="Profile Attachment"
                   onChange={handleChange}
-                />
+                /> */}
               </>
             )}
           </div>
@@ -221,7 +248,7 @@ const Register = () => {
                 </button>
               )}
               {currentPage === 2 && (
-                <button class name = "next" type="submit">Register</button>
+                <button className="next" type="submit">Register</button>
               )}
             </div>
           </form>
