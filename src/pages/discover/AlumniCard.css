@@ -1,0 +1,90 @@
+.alumni-card {
+    width: fit-content;
+    height: fit-content;
+    border-radius: 10px;
+    overflow: hidden;
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .alumni-card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .alumni-image-container {
+    position: relative;
+    width: 100%;
+    height: 70%;
+  }
+  
+  .alumni-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .alumni-hover-effect {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .alumni-card:hover .alumni-hover-effect {
+    opacity: 1;
+  }
+  
+  .follow-button,
+  .like-button,
+  .followers-button {
+    background-color: transparent;
+    border: none;
+    font-size: 1.2rem;
+    margin: 0 0.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .follow-button:hover,
+  .like-button:hover,
+  .followers-button:hover {
+    color: #007bff;
+  }
+  
+  .follow-count,
+  .like-count,
+  .followers-count {
+    margin-left: 0.5rem;
+    font-weight: bold;
+  }
+  
+  .alumni-info {
+    padding: 1rem;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .alumni-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .alumni-title {
+    font-size: 1.1rem;
+    color: #6c757d;
+  }
+  
+  .alumni-company {
+    font-size: 1.1rem;
+    font-weight: bold;
+  }

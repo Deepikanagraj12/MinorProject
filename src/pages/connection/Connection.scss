@@ -1,0 +1,123 @@
+@import "../../style.scss";
+.connection-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  
+    @include themify($themes) {
+        background-color: themed("bgSoft");
+      .connection-list,
+      .follower-list {
+        flex-basis: 100%;
+        margin: 20px;
+        padding: 20px;
+        border: 1px solid themed("border");
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: themed("bg");
+  
+        h2 {
+          margin-top: 0;
+          margin-bottom: 20px;
+          font-size: 24px;
+          font-weight: bold;
+          color: themed("textColor");
+        }
+  
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+  
+        li {
+          display: flex;
+          align-items: center;
+          padding: 10px 0;
+          border-bottom: 1px solid themed("border");
+  
+          .connection-item,
+          .follower-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            justify-content: flex-start; /* Align items to the start */
+            gap: 20px;
+            
+            /* Remove margin-right from the image */
+            img {
+              width: 100px;
+              height: 100px;
+              border-radius: 50%;
+              object-fit: cover;
+            }
+  
+            .connection-info,
+            .follower-info {
+              flex: 1;
+  
+              h3,
+              p {
+                color: themed("textColor");
+              }
+  
+              h3 {
+                margin-top: 0;
+                margin-bottom: 5px;
+                font-size: 18px;
+                font-weight: bold;
+              }
+  
+              p {
+                margin: 0;
+                color: #777;
+                font-size: 14px;
+              }
+  
+              p:last-child {
+                font-weight: bold;
+              }
+  
+              span {
+                margin-left: 10px;
+                font-size: 12px;
+                color: #999;
+              }
+  
+              a {
+                color: #007bff;
+                text-decoration: none;
+                margin-left: 10px;
+                font-size: 12px;
+              }
+  
+              a:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+  
+        .message-button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          background-color: rgb(23, 136, 241);
+          color: #fff;
+          font-size: 14px;
+          cursor: pointer;
+          transition: background-color 0.2s ease-in-out;
+  
+          &:hover {
+            background-color: #0056b3;
+          }
+        }
+      }
+    }
+  }
+  
+  

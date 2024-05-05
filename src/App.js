@@ -17,6 +17,8 @@ import "./style.scss";
 import { Profiler, useContext } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
 import { AuthContext } from "./context/authContext";
+import Connection from "./pages/connection/Connection"
+import Discover from "./pages/discover/Discover1";
 
 function App() {
   const {currentUser} = useContext(AuthContext);
@@ -63,6 +65,15 @@ function App() {
           path: "/profile/:id",
           element: <Profile />,
         },
+        {
+          path: "/connection",
+          element: <Connection />,
+        },
+        {
+          path:"/discover",
+          element:<Discover/>,
+
+        },
       ],
     },
     {
@@ -72,7 +83,8 @@ function App() {
     {
       path: "/register",
       element: <Register />,
-    }
+    },
+  
   
   ]);
 

@@ -60,6 +60,13 @@
           align-items: center;
           gap: 10px;
         }
+        .link{
+          color: themed("textColor");
+          text-decoration: none;
+          &:hover {
+            color: themed("highlight");
+          }
+        }
 
           .alumini{
             margin-top: 10px;
