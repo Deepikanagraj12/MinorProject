@@ -1,4 +1,6 @@
 import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import "./leftBar.scss"; // Assuming you have SCSS styles
 import { AuthContext } from "../../context/authContext";
 import Home from "../../assets/home-button.png";
@@ -14,6 +16,7 @@ import megaphone from "../../assets/megaphone.png";
 const LeftBar = () => {
   // Accessing the current user from AuthContext
   const { currentUser } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   return (
     <div className="leftBar">
@@ -28,21 +31,27 @@ const LeftBar = () => {
         <div className="menu">
           <span>Main Menu</span>
           <div className="user">
-          <img src={currentUser.profilePic} alt="Profile" />
-          <span>Akshat Sharma</span>
+          
+        <img src={currentUser.profilePic} alt="Profile" />
+          <span onClick={() => navigate('/profile/:id')}>Akshat Sharma </span> 
         </div>
           <div className="item">
             <img src={Home} alt="Home" />
+            <Link to = "/" className="link">
             <span>Home</span>
+            </Link>
           </div>
           <div className="item">
+            
             <img src={Friends} alt="Friends" />
-            <span>Friends</span>
+            <Link to = "/connection" className="link">
+            <span>Connections</span>
+            </Link>
           </div>
-          <div className="item">
+          {/* <div className="item">
             <img src={Groups} alt="Groups" />
             <span>Groups</span>
-          </div>
+          </div> */}
           <div className="item">
             <img src={Message} alt="Messages" />
             <span>Messages</span>
@@ -66,7 +75,9 @@ const LeftBar = () => {
           </div> */}
           <div className="item">
             <img src= {discover} alt="Discover" />
+            <Link to ="/discover" className="link">
             <span>Discover</span>
+            </Link>
           </div>
           <div className="item">
             <img src= {megaphone} alt="Updates" />
