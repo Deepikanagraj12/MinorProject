@@ -29,20 +29,19 @@ const LeftBar = () => {
         <div className="menu">
           <span>Main Menu</span>
           <div className="user">
-          <img src={currentUser.profilePic} alt="Profile" />
-          <span>Akshat Sharma</span>
-        </div>
+            <img src={currentUser.profilePic} alt="Profile" />
+            <span>Akshat Sharma</span>
+          </div>
           <div className="item">
             <img src={Home} alt="Home" />
-            <Link to = "/" className="link">
-            <span>Home</span>
+            <Link to="/" className="link">
+              <span>Home</span>
             </Link>
           </div>
           <div className="item">
-            
             <img src={Friends} alt="Friends" />
-            <Link to = "/connection" className="link">
-            <span>Connections</span>
+            <Link to="/connection" className="link">
+              <span>Connections</span>
             </Link>
           </div>
           {/* <div className="item">
@@ -51,14 +50,16 @@ const LeftBar = () => {
           </div> */}
           <div className="item">
             <img src={Message} alt="Messages" />
-            <span>Messages</span>
+            <Link to="/message" className="link">
+              <span>Messages</span>
+            </Link>
           </div>
           <div className="item">
-            <img src= {Notification} alt="Notifications" />
+            <img src={Notification} alt="Notifications" />
             <span>Notifications</span>
           </div>
           <div className="item">
-            <img src= {setting} alt="Settings" />
+            <img src={setting} alt="Settings" />
             <span>Settings</span>
           </div>
         </div>
@@ -71,13 +72,13 @@ const LeftBar = () => {
             <span>Events</span>
           </div> */}
           <div className="item">
-            <img src= {discover} alt="Discover" />
-            <Link to ="/discover" className="link">
-            <span>Discover</span>
+            <img src={discover} alt="Discover" />
+            <Link to="/discover" className="link">
+              <span>Discover</span>
             </Link>
           </div>
           <div className="item">
-            <img src= {megaphone} alt="Updates" />
+            <img src={megaphone} alt="Updates" />
             <span>Updates</span>
           </div>
         </div>

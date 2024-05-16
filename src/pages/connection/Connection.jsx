@@ -5,16 +5,19 @@ import alumni from "../../assets/alumni.png"
 
 const Connection = () => {
   const connections = [
-    { id: 1, name: 'John Doe', image: student },
-    { id: 2, name: 'Jane Doe', image: student },
-    { id: 3, name: 'Bob Smith', image: student },
-  ];
-
-  const followers = [
-    { id: 1, name: 'Alice Johnson', image: alumni },
-    { id: 2, name: 'Mike Brown', image: alumni },
+    { id: 1, name: 'Chirag Hira', image: student },
+    { id: 2, name: 'Akshat Sharma', image: student },
+    { id: 3, name: 'Vansh Thakur', image: student },
+    { id: 1, name: 'Shreya Jaiswaal', image: alumni },
+    { id: 2, name: 'Mike Tyson', image: alumni },
     { id: 3, name: 'Emily Davis', image: alumni },
   ];
+
+  // const followers = [
+  //   { id: 1, name: 'Alice Johnson', image: alumni },
+  //   { id: 2, name: 'Mike Brown', image: alumni },
+  //   { id: 3, name: 'Emily Davis', image: alumni },
+  // ];
 
   return (
     <div className="connection-container">
@@ -35,8 +38,8 @@ const Connection = () => {
           ))}
         </ul>
       </div>
-      <div className="follower-list">
-        <h2>Followers</h2>
+      {/* <div className="follower-list">
+        <h2></h2>
         <ul>
           {followers.map((follower) => (
             <li key={follower.id}>
@@ -51,7 +54,7 @@ const Connection = () => {
             </li>
           ))}
         </ul>
-      </div>
+      </div> */}
     </div>
   );
 };
