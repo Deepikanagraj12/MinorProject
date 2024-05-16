@@ -13,11 +13,13 @@ import { DarkModeContext } from "../../context/darkModeContext";
 import { AuthContext } from "../../context/authContext";
 import { red } from "@mui/material/colors";
 import icon from "../../assets/icon.jpg";
+import { useNavigate } from "react-router-dom";
 
 
 const Navbar = () => {
   const { toggle, darkMode } = useContext(DarkModeContext);
   const { currentUser } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   return (
     <div className="navbar">
@@ -29,7 +31,7 @@ const Navbar = () => {
             <span>Unilink</span>
           </Link>
         </div>
-        <HomeOutlinedIcon />
+        <HomeOutlinedIcon/>
         {darkMode ? (
           <WbSunnyOutlinedIcon onClick={toggle} />
         ) : (
@@ -47,7 +49,7 @@ const Navbar = () => {
         <NotificationsOutlinedIcon />
         <div className="user">
           <img src={currentUser.profilePic} alt="" />
-          <span>Akshat Sharma</span>
+          <span onClick={() => navigate('/profile/:id')}>Akshat Sharma</span>
         </div>
       </div>
     </div>

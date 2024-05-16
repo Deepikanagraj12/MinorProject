@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import "./leftBar.scss"; // Assuming you have SCSS styles
 import { AuthContext } from "../../context/authContext";
 import Home from "../../assets/home-button.png";
@@ -15,6 +16,7 @@ import megaphone from "../../assets/megaphone.png";
 const LeftBar = () => {
   // Accessing the current user from AuthContext
   const { currentUser } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   return (
     <div className="leftBar">
@@ -29,9 +31,9 @@ const LeftBar = () => {
         <div className="menu">
           <span>Main Menu</span>
           <div className="user">
-            <img src={currentUser.profilePic} alt="Profile" />
-            <span>Akshat Sharma</span>
-          </div>
+          <img src={currentUser.profilePic} alt="Profile" />
+          <span>Akshat Sharma</span>
+        </div>
           <div className="item">
             <img src={Home} alt="Home" />
             <Link to="/" className="link">
