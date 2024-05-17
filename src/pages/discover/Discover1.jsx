@@ -1,5 +1,5 @@
 import React from 'react';
-import alumniData from './alumnidata';
+import alumniData from './AlumniData';
 import './Discover.scss'
 
 const Discover = () => {

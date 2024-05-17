@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import './message.scss';
 import { Avatar } from '@mui/material';
-import picture from '../../assets/student.png';
+import SendIcon from '@mui/icons-material/Send'; // Import Send icon from Material UI
+import AttachFileIcon from '@mui/icons-material/AttachFile'; // Import AttachFile icon from Material UI
 
 const Message = ({ sender, content, timestamp, isImage, isAudio }) => {
   return (
-    <div className={`message ${sender}`}>
+    <div className={`message ${sender === 'You' ? 'sender' : 'receiver'}`}>
       <div className="message-content">
         {isImage && <img src={content} alt="Shared Image" />}
         {isAudio && <audio src={content} controls />}
@@ -19,37 +20,30 @@ const Message = ({ sender, content, timestamp, isImage, isAudio }) => {
 const ChatWindow = ({ recipient }) => {
   const [messages, setMessages] = useState([
     {
-      sender: recipient.name,
+      sender: 'Chirag Hira',
       content: 'Wow, that looks amazing',
       timestamp: '10:22 AM',
       isImage: true,
-      isAudio: false,
     },
     {
       sender: 'You',
       content: 'Have a good day, Roman!',
       timestamp: '10:27 AM',
-      isImage: false,
-      isAudio: false,
     },
     {
       sender: recipient.name,
-      content: 'Hey there, I\'m having trouble open...',
+      content: 'Hey there, I\'m having trouble opening...',
       timestamp: '11:24 AM',
-      isImage: false,
-      isAudio: true,
     },
     {
       sender: recipient.name,
       content: 'Sure, but I\'m busy right now.',
       timestamp: '5:12 PM',
-      isImage: false,
-      isAudio: true,
     },
   ]);
 
   const [newMessage, setNewMessage] = useState('');
-  const [attachment, setAttachment] = useState(null);
+  const [attachment, setAttachment] = useState('');
 
   const handleSendMessage = () => {
     if (newMessage.trim() || attachment) {
@@ -58,12 +52,12 @@ const ChatWindow = ({ recipient }) => {
         sender: 'You',
         content: newMessage || attachment,
         timestamp,
-        isImage: false,
+        isImage: false, // Set default as text message
         isAudio: false,
       };
       setMessages([...messages, newMessageObject]);
       setNewMessage('');
-      setAttachment(null);
+      setAttachment('');
     }
   };
 
@@ -89,6 +83,7 @@ const ChatWindow = ({ recipient }) => {
         ))}
       </div>
       <div className="text-input">
+        <AttachFileIcon className="attachment-icon" />
         <input
           type="text"
           placeholder="Type your message..."
@@ -96,7 +91,7 @@ const ChatWindow = ({ recipient }) => {
           onChange={(e) => setNewMessage(e.target.value)}
         />
         <input type="file" onChange={handleAttachmentChange} />
-        <button onClick={handleSendMessage}>Send</button>
+        <button onClick={handleSendMessage}><SendIcon /></button>
       </div>
     </div>
   );
@@ -112,10 +107,9 @@ const ConnectionsList = ({ connections, setRecipient }) => {
           className="connection"
           onClick={() => setRecipient(connection)}
         >
-          <div className="connection-avatar">{<Avatar src ={connection.avatar} alt={connection.name}/>}</div>
+          <div className="connection-avatar"><Avatar src={connection.avatar} alt={connection.name} /></div>
           <div className="connection-info">
             <div className="connection-name">{connection.name}</div>
-            {/* Add additional connection details */}
           </div>
           <div className="connection-actions">
             <button className="call-button">Call</button>
@@ -130,12 +124,12 @@ const ConnectionsList = ({ connections, setRecipient }) => {
 const MessageApp = () => {
   const [recipient, setRecipient] = useState(null);
   const connections = [
-    { id: 1, name: 'Chirag Hira' ,avatar : picture},
-    { id: 2, name: 'Deepika Nagraj',avatar : picture },
-    { id: 3, name: 'Akshat Sharma',avatar : picture },
-    { id: 4, name: 'Prabhanshu Tiwari',avatar : picture },
-    { id: 5, name: 'Raj Sharma',avatar : picture },
-    { id: 6, name: 'Akshta Dong-re',avatar : picture },
+    { id: 1, name: 'Chirag Hira', avatar: '../../assets/student1.png' },
+    { id: 2, name: 'Deepika Nagraj', avatar: '../../assets/student2.png' },
+    { id: 3, name: 'Akshat Sharma', avatar: '../../assets/student3.png' },
+    { id: 4, name: 'Prabhanshu Tiwari', avatar: '../../assets/student4.png' },
+    { id: 5, name: 'Raj Sharma', avatar: '../../assets/student5.png' },
+    { id: 6, name: 'Akshta Dong-re', avatar: '../../assets/student6.png' },
   ];
 
   return (
@@ -147,7 +141,7 @@ const MessageApp = () => {
       {recipient && (
         <div className="chat-container">
           <div className="recipient-info">
-            <div className="recipient-avatar"><Avatar src ={recipient.avatar} alt={recipient.name}/></div>
+            <div className="recipient-avatar"><Avatar src={recipient.avatar} alt={recipient.name} /></div>
             <div className="recipient-name">{recipient.name}</div>
             <div className="recipient-actions">
               <button className="call-button">Call</button>
@@ -158,7 +152,7 @@ const MessageApp = () => {
         </div>
       )}
     </div>
-    
+
   );
 };
 
