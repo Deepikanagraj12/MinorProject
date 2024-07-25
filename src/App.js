@@ -19,7 +19,7 @@ import { DarkModeContext } from "./context/darkModeContext";
 import { AuthContext } from "./context/authContext";
 import Connection from "./pages/connection/Connection"
 import Discover from "./pages/discover/Discover1";
-import Message from "./pages/message/Message"
+import Message from "./pages/message/Message";
 
 function App() {
   const {currentUser} = useContext(AuthContext);
